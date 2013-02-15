@@ -1,0 +1,67 @@
+body{
+	margin : auto;
+	//padding-bottom:50%;
+}
+
+header{
+	
+	text-align:center;	
+	margin-bottom :3%;
+	
+}
+#morpion {
+	width :300px;
+	height : 300px;
+	margin:auto;
+	background-color: #EFEFEF;	
+    padding:0%
+    margin :0%;
+		
+}
+#morpion div {
+	padding:0;
+	margin:0;	
+}
+
+.ligne, .ligne3 {
+	width:100%;
+	height :33.2%;
+	margin-bottom :0%;
+}
+.ligne
+{
+border-bottom:1px solid black;	
+}
+.colonne1,.colonne2,.colonne3{
+	
+	display:inline-block;
+	
+	width:32%;	
+	height:100%;
+	margin:0;
+	
+}
+
+canvas{
+	width:100%;
+	height:100%;
+	margin :0;	
+	padding :0%;
+	//border : 1px solid green;
+	
+}
+
+.colonne1,.colonne2{
+	border-right:1px solid black;
+}
+
+
+@media all and (min-width: 700px) {
+	#morpion {
+	width :500px;
+	height :500px;
+	background-color: #EFEFEF;	
+    padding:0%
+    margin :0%;
+	
+}

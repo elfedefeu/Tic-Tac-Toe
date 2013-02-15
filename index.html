@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0;height=device-height ,initial-scale=1;">	
+
+		<title>Morpion</title>
+				
+		<link href="morpion.css" rel="stylesheet" type="text/css">
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+			</script>
+		<script async type="text/javascript" src="dessin.js"></script>
+		<script async type="text/javascript" src="jeu.js"></script>
+		<script async type="text/javascript" src="IA.js"></script>
+
+
+
+	</head>
+<body>
+	<header>
+		Niveau facile
+	</header>
+	<section id="menu">
+	</section>
+	<section id="morpion">
+		<div class="ligne">
+			<div id='0-0' class="colonne1" onclick="Game.onClick(this)"></div>
+			<div id='0-1' class="colonne2" onclick="Game.onClick(this)"></div>
+			<div id='0-2' class="colonne3" onclick="Game.onClick(this)"></div>
+		</div>
+		<div class="ligne">
+			<div id='1-0' class="colonne1" onclick="Game.onClick(this)"></div>
+			<div id='1-1' class="colonne2" onclick="Game.onClick(this)"></div>
+			<div id='1-2' class="colonne3" onclick="Game.onClick(this)"></div>
+		</div>
+		<div class="ligne3">
+			<div id='2-0' class="colonne1" onclick="Game.onClick(this)"></div>
+			<div id='2-1' class="colonne2" onclick="Game.onClick(this)"></div>
+			<div id='2-2' class="colonne3" onclick="Game.onClick(this)"></div>
+		</div>
+
+	</section>
+
+</body>
+</html>
