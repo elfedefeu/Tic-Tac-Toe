@@ -7,7 +7,7 @@ function drawCross(e) {
 	canvas.className ="canvas";
 	contextNow = canvas.getContext('2d');
 	
-	var largeur = parseInt($("#morpion").width())/3;
+	var largeur = parseInt($("#tictactoe").width())/3;
 	
 	canvas.width=largeur;
 	canvas.height=largeur;
@@ -24,7 +24,6 @@ function drawCross(e) {
 
 	e.appendChild(canvas);
 	
-
 }
 
 function drawCircle(e){
@@ -33,7 +32,7 @@ function drawCircle(e){
 	canvas.className ="canvas";
 	contextNow = canvas.getContext('2d');
 	
-	var largeur = parseInt($("#morpion").width())/3;
+	var largeur = parseInt($("#tictactoe").width())/3;
 	canvas.width=largeur;
 	canvas.height=largeur;
 

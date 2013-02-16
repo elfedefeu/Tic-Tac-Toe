@@ -12,7 +12,7 @@ var IAManager = {
         for(var i=0;i<3;i++) {
           	for(var j=0;j<3;j++) {
                 if(game[i][j] == 0) {
-                      game[i][j] = 1;
+                      game[i][j] = 2;
                       tmp = IAManager.maximum(game,depth-1);
                       
                       if(tmp > maximum || ((tmp == maximum) && (Math.random()%2 == 0) )) {
@@ -26,7 +26,7 @@ var IAManager = {
           	}
      	}
  
-     game[maxi][maxj]=1;
+     game[maxi][maxj]=2;
      
      var rest = IAManager.gagnant(game);
 
@@ -36,19 +36,7 @@ var IAManager = {
      
      drawCircle(div);
      
-     if(rest ==1 ) {
-     	alert("Ordinateur gagne");
-     	Game.init();
-     } 
-     else if (rest==2) { 
-     	alert("Joueur gagne");
-     	Game.init();
-     } 
-     else if(rest==3) { 
-     	alert("Egalité");
-     	Game.init();
-     } 
-
+     Game.checkWinner();
 },
 	
 	/*--- Returns the maximum of children---*/
@@ -64,7 +52,7 @@ var IAManager = {
 	     for(var i=0;i<3;i++) {
 	          for(var j=0;j<3;j++) {
 	                if(game[i][j] == 0) {
-	                      game[i][j] = 2;
+	                      game[i][j] = 1;
 	                      tmp = IAManager.minimum(game,depth-1);
 	                      
 	                      if(tmp > maxi|| ((tmp == maxi) && (Math.random()%2 == 0))) {
@@ -91,7 +79,7 @@ var IAManager = {
 	     for(var i=0;i<3;i++) {
 	          for(var j=0;j<3;j++) {
 	                if(game[i][j] == 0) {
-	                      game[i][j] = 1;
+	                      game[i][j] = 2;
 	                      tmp = IAManager.maximum(game,depth-1);
 							if(tmp < mini || ( (tmp == mini) && (Math.random()%2 == 0) ) ) {
 	                            mini = tmp;
@@ -114,7 +102,7 @@ var IAManager = {
 		    case 2:
 		        return 10*cntjoueur;
 		    case 3 :
-		    	return 100*cntjoueur;
+		    	return -100*cntjoueur;
 		    default:
 		        return 0;
 			}
@@ -139,17 +127,20 @@ var IAManager = {
 	     vainqueur = IAManager.gagnant(game);
 	     if( vainqueur!= 0)
 	     {
-	         if( vainqueur == 1 )
+	         //IA wins
+	         if( vainqueur == 2 )
 	          {
 	             return 1000 - nb_de_pions;
 	
 	
 	          }
-	          else if( vainqueur == 2 )
+	          //Player wins
+	          else if( vainqueur == 1 )
 	          {
 	          	 return -1000 + nb_de_pions;
 	
 	          }
+	          //Egality
 	          else
 	          {
 	               return 0;
@@ -160,12 +151,12 @@ var IAManager = {
 	     var cntpion=0;
 	     var cntjoueur=0;
          for(i=0;i<3;i++) {
-	          if(game[i][i] == 1) {
+	          if(game[i][i] == 2) {
 	               cntpion++;
 	               cntjoueur++;
 	 
 	          }
-	          else if(game[i][i] == 2) {
+	          else if(game[i][i] == 1) {
 	               cntpion++;
 	               cntjoueur--;          
 	          }       
@@ -178,11 +169,11 @@ var IAManager = {
 	    cntjoueur =0;
 	    for(i=0;i<3;i++) {
 	         
-	          if(game[i][2-i] == 1) {
+	          if(game[i][2-i] == 2) {
 	               cntpion++;
 	               cntjoueur++;
 	          }
-	          else if(game[i][2-i] == 2) {
+	          else if(game[i][2-i] == 1) {
 	          		cntpion++;
 	               	cntjoueur--;            
 	          }       
@@ -196,12 +187,12 @@ var IAManager = {
 	    	  cntjoueur =0;
 	         
 	          for(j=0;j<3;j++) {
-	               if(game[i][j] == 1) {
+	               if(game[i][j] == 2) {
 	                     cntpion++;
 	                     cntjoueur++;
 	               }
 	               
-	               else if(game[i][j] == 2) {
+	               else if(game[i][j] == 1) {
 	                    cntpion++;
 	               		cntjoueur--;                
 	               }
@@ -216,11 +207,11 @@ var IAManager = {
 	          cntpion = 0;
 	          cntjoueur = 0;         
 	          for(j=0;j<3;j++) {
-	               if(game[j][i] == 1) {
+	               if(game[j][i] == 2) {
 	                     cntpion++;
 	                     cntjoueur++;
 	                }
-	               else if(game[j][i] == 2) {
+	               else if(game[j][i] == 1) {
 	                    cntpion++;
 	               		cntjoueur--; 
 	               }
@@ -235,12 +226,12 @@ var IAManager = {
 	
 		var obj = IAManager.nb_series(game);
 		//IA win
-		if(obj[0]==1) {
-			return 1;	
+		if(obj[1]==1) {
+			return 2;	
 		}
 		//Player win
-		else if (obj[1]==1) {
-			return 2;
+		else if (obj[0]==1) {
+			return 1;
 			
 		}
 		else {

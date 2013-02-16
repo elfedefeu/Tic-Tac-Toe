@@ -1,13 +1,13 @@
 {
-  "name": "My App",
-  "description": "My elevator pitch goes here",
+  "name": "Tic Tac Toe",
+  "description": "Simple game of tic tac toe",
   "launch_path": "/index.html",
   "icons": {
-    "128": "/icone.jpg"
+    "128": "/style/icons/icone.png"
   },
   "developer": {
-    "name": "Your name or organization",
-    "url": "http://your-homepage-here.org"
+    "name": "Pauline Patron",
+    "url": ""
   },
   "default_locale": "en"
 }

@@ -1,0 +1,141 @@
+/************** CSS design for the tic tac toe *************/
+
+/*--- General design for the small device : phone---*/
+@viewport {
+    orientation: portrait;
+}
+
+body {
+	margin : auto;
+}
+
+header {
+	color: red;	
+	font-size : 25px;
+	padding-top :5%;
+	text-align:center;	
+	margin-top :1%;
+}
+
+
+#playername,#firstplayer {
+	text-align:center;	
+	margin-top:1%;	
+}
+h3,h4,h5 {
+	margin:0;
+}
+
+h5 {
+	font-style : oblique;
+	margin-bottom:1%;	
+}
+
+#tictactoe,#menu,#formulaire {
+	width :300px;
+	height : 300px;
+	margin:auto;
+	background-color: #EFEFEF;	
+    padding:0%
+    margin :0%;		
+}
+
+#play,#formulaire,#error,#playername,#firstplayer {
+	display: none;	
+}
+
+/*--- Menu design ---*/
+#menu {
+	margin-top:13%;
+	text-align: center;
+}
+
+#menu img {
+	width:300px;
+	height:300px;
+	text-align : center;
+}
+
+/*--- Formulaire design ---*/
+#formulaire form {
+	text-align:center;
+	padding-top :10%;
+}
+
+#formulaire form label {
+	margin:auto;
+	margin-top:5%;
+	display:block;
+}
+
+#formulaire form input {
+	margin:auto;
+	margin-top:5%;
+	display:block;
+}
+
+#error{
+	color : red;
+	text-align:center;	
+}
+
+
+/*--- Tic tac toe(plateau) design ---*/
+#play {
+	text-align:center;	
+}
+#tictactoe div {
+	padding:0;
+	margin:0;	
+}
+#back {
+	margin-top:2%;	
+}
+
+.line, .line3 {
+	width:100%;
+	height :33.2%;
+	margin-bottom :0%;
+}
+
+.line {
+	border-bottom:1px dashed black;	
+}
+
+.column1,.column2,.column3{	
+	display:inline-block;	
+	width:32%;	
+	height:100%;
+	margin:0px;	
+}
+.column1,.column2{
+	border-right:1px dashed black;
+}
+
+canvas{
+	width:100%;
+	height:100%;
+	margin :0px;	
+	padding :0%;
+}
+
+
+/*--- Specials specifications for the 'big' device ---*/
+@media all and (min-width: 700px) {
+#menu {
+	margin-top:70px;
+}
+	
+	#menu img {
+	width:450px;
+	height:450px;
+	margin:auto;	
+}
+	#tictactoe,#menu,#formulaire {
+	width :450px;
+	height :450px;
+	background-color: #EFEFEF;	
+    padding:0%
+    margin :0%;
+	
+}
