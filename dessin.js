@@ -7,7 +7,7 @@ function drawCross(e) {
 	canvas.className ="canvas";
 	contextNow = canvas.getContext('2d');
 	
-	var largeur = parseInt(document.getElementById("morpion").clientWidth)/3;
+	var largeur = parseInt($("#morpion").width())/3;
 	
 	canvas.width=largeur;
 	canvas.height=largeur;
@@ -33,7 +33,7 @@ function drawCircle(e){
 	canvas.className ="canvas";
 	contextNow = canvas.getContext('2d');
 	
-	var largeur = parseInt(document.getElementById("morpion").clientWidth)/3;
+	var largeur = parseInt($("#morpion").width())/3;
 	canvas.width=largeur;
 	canvas.height=largeur;
 

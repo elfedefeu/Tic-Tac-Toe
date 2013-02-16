@@ -3,9 +3,11 @@
 var Game = {
 	
     plateau : new Array(),
+    player1 :"Player 1",
+    player2:"Artificial Intelligence",
     
-    /*--- Deepth is the difficulty( 3 : Easy, 6 :medium, 9:Hard)---*/
-    depth : 1,	
+    /*--- Deepth is the difficulty---*/
+    depth : 3,	
 	
 	/*--- Initialize the game ( javascript parameters and html clean ---*/
 	init : function minit(){
@@ -14,7 +16,7 @@ var Game = {
 		{	
 			Game.plateau[j] = [];
 			var name  = 'colonne'+ (j+1);
-			list = document.getElementsByClassName(name);	
+			list = $('.'+name);	
 			
 			for(var i=0;i<3;i++) {
 				
@@ -44,7 +46,7 @@ var Game = {
 				 Game.init();
 			}
 			else {
-				IAManager.play(Game.plateau,6);
+				IAManager.play(Game.plateau,3);
 			}
 		}	
 	},

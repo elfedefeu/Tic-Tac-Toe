@@ -110,9 +110,11 @@ var IAManager = {
 		switch(cntpion)
 		    {
 		    case 1:
-		        return 10*cntjoueur;
+		        return 1*cntjoueur;
 		    case 2:
-		        return 30*cntjoueur;
+		        return 10*cntjoueur;
+		    case 3 :
+		    	return 100*cntjoueur;
 		    default:
 		        return 0;
 			}

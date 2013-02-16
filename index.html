@@ -7,21 +7,38 @@
 		<title>Morpion</title>
 				
 		<link href="morpion.css" rel="stylesheet" type="text/css">
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
-			</script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script async type="text/javascript" src="dessin.js"></script>
 		<script async type="text/javascript" src="jeu.js"></script>
 		<script async type="text/javascript" src="IA.js"></script>
+		<script async type="text/javascript" src="display.js"></script>
+
 
 
 
 	</head>
 <body>
 	<header>
-		Niveau facile
+		Tic Tac Toe
 	</header>
 	<section id="menu">
+		<img src="accueil.jpg" alt="logo"/>
+		<button onclick="playwithTwo();"> Play VS Human</button>
+		<button onclick="playwithIA();"> Play VS AI</button>
 	</section>
+	<section id="formulaire">
+		<form id="forme">
+			<label id=''> Name player 1</label>
+			<input type="text" id="prenom1" value=""/>
+			<label id=''> Name player 2</label>
+			<input type="text" id="prenom2" value=""/>
+			<input type="button" value="Validate" onclick='validate()'/></p>
+		</form>
+		<div id="error">Please enter a name for the 2 players</div>
+	</section>
+	<div id="playername"></div>
+
+	<section id="play">
 	<section id="morpion">
 		<div class="ligne">
 			<div id='0-0' class="colonne1" onclick="Game.onClick(this)"></div>
@@ -40,6 +57,7 @@
 		</div>
 
 	</section>
-
+	<input type="button" value="Back Menu" onclick='backMenu()'/></p>
+	</section>
 </body>
 </html>
