@@ -15,7 +15,7 @@ var IAManager = {
                       game[i][j] = 2;
                       tmp = IAManager.maximum(game,depth-1);
                       
-                      if(tmp > maximum || ((tmp == maximum) && (Math.random()%2 == 0) )) {
+                      if(tmp > maximum || ((tmp == maximum) && (((Math.random())*10+1)%2 == 0) )) {
 
                             maximum = tmp;
                             maxi = i;
@@ -55,7 +55,7 @@ var IAManager = {
 	                      game[i][j] = 1;
 	                      tmp = IAManager.minimum(game,depth-1);
 	                      
-	                      if(tmp > maxi|| ((tmp == maxi) && (Math.random()%2 == 0))) {
+	                      if(tmp > maxi|| ((tmp == maxi) && (((Math.random())*10+1)%2 == 0) )) {
 	                            maxi = tmp;
 	                      }
 	                      game[i][j] = 0;
@@ -81,7 +81,7 @@ var IAManager = {
 	                if(game[i][j] == 0) {
 	                      game[i][j] = 2;
 	                      tmp = IAManager.maximum(game,depth-1);
-							if(tmp < mini || ( (tmp == mini) && (Math.random()%2 == 0) ) ) {
+							if(tmp < mini || ( (tmp == mini) && (((Math.random())*10+1)%2 == 0))) {
 	                            mini = tmp;
 	                     	}
 	                      game[i][j] = 0;
