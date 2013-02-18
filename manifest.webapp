@@ -4,11 +4,12 @@
   "description": "Simple game of tic tac toe",
   "launch_path": "/index.html",
   "icons": {
-    "128": "/style/icons/icone.png"
+    "50": "/style/icons/icone.png",
+    "128":"/style/icons/icone-128.png"
   },
   "developer": {
     "name": "Pauline Patron",
-    "url": "www.paulinepatron.fr"
+    "url":"http://apps.paulinepatron.fr"
   },
   "default_locale": "en",
   "orientation" :"portrait"
