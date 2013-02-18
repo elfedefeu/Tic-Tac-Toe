@@ -4,9 +4,17 @@
 @viewport {
     orientation: portrait;
 }
-
+html {
+	background:url(images/feuille.jpg);
+	background-size:100% 100%;
+	-moz-background-size:100% 100%; /* Old Firefox */
+	background-repeat:no-repeat;
+	height:100%;
+}
 body {
 	margin : auto;
+	//height:410px;
+	
 }
 
 header {
@@ -139,3 +147,4 @@ canvas{
     margin :0%;
 	
 }
+
