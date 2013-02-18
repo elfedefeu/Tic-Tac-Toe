@@ -10,5 +10,6 @@
     "name": "Pauline Patron",
     "url": "www.paulinepatron.fr"
   },
-  "default_locale": "en"
+  "default_locale": "en",
+  "orientation" :"portrait"
 }
