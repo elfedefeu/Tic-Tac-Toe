@@ -12,7 +12,7 @@ body {
 header {
 	color: red;	
 	font-size : 25px;
-	padding-top :5%;
+	padding-top :3%;
 	text-align:center;	
 	margin-top :1%;
 }
@@ -89,7 +89,7 @@ h5 {
 	margin:0;	
 }
 #back {
-	margin-top:2%;	
+	margin-top:0.5%;	
 }
 
 .line, .line3 {
