@@ -8,9 +8,11 @@ function playwithIA(){
 	Game.currentplayer ="player1";
 	Game.init();
 	$("#play").show();
+	$("#playername").empty();
+	//$("#firstplayer").empty(); 
 	$("#playername").prepend( Game.player1 + " VS "+Game.player2);
-	$("#playername").show(); 
-	$("#firstplayer").show(); 
+	$("#playername").css("visibility", "visible");
+	$("#firstplayer").css("visibility", "visible");
 
 	
 	
@@ -30,10 +32,12 @@ function validate() {
 	    Game.player2= $('#firstname2').val();
 	    Game.ia = false;
    		Game.init();
+   		$("#playername").empty();
+	    //$("#firstplayer").empty(); 
 		$("#playername").prepend("<h2>"+ Game.player1 + " VS "+Game.player2 + "</h2>"); 
 		$("#formulaire").hide();
-		$("#playername").show(); 
-		$("#firstplayer").show(); 
+		$("#playername").css("visibility", "visible");
+	    $("#firstplayer").css("visibility", "visible");
 		$("#play").show();
 		
 	}
@@ -45,10 +49,12 @@ function validate() {
 
 function backMenu() {
 	Game.ia = true;
-	$("#playername").hide(); 
-	$("#playername").empty();
-	$("#firstplayer").hide(); 
-	$("#firstplayer").empty(); 
+	$("#playername").css("visibility", "hidden");
+	$("#firstplayer").css("visibility", "hidden");
+	//$("#playername").hide(); 
+	//$("#playername").empty();
+	//$("#firstplayer").hide(); 
+	//$("#firstplayer").empty(); 
 	$("#formulaire").hide();
 	$("#play").hide();
 	$('#firstname1').val("");

@@ -47,14 +47,15 @@ h5 {
     padding:0%
     margin :0%;		
 }
-
-#play,#formulaire,#error,#playername,#firstplayer {
+#playername,#firstplayer{
+	visibility:hidden;	
+}
+#play,#formulaire,#error{
 	display: none;	
 }
 
 /*--- Menu design ---*/
 #menu {
-	margin-top:13%;
 	text-align: center;
 }
 
@@ -129,12 +130,10 @@ canvas{
 
 
 /*--- Specials specifications for the 'big' device ---*/
-@media all and (min-width: 700px) {
-#menu {
-	margin-top:70px;
-}
+@media all and (min-width: 500px) {
+
 	
-	#menu img {
+	#menu img,#menu {
 	width:450px;
 	height:450px;
 	margin:auto;	
