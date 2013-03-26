@@ -3,25 +3,23 @@
 var IAManager = {
 	
 	/*--- IA play ---*/
-	play: function mplay(game,depth)
-	{
-		var maximum = -100000;
-		var maxi =0;
+    play: function (game,depth) {
+	    var maximum = -100000;
+		var maxi = 0;
 		var maxj = 0;
      
         for(var i=0;i<3;i++) {
           	for(var j=0;j<3;j++) {
-                if(game[i][j] == 0) {
+                if(game[i][j] == null) {
                       game[i][j] = 2;
-                      tmp = IAManager.maximum(game,depth-1);
-                      
+                      tmp = IAManager.evaluation(game);                      
                       if(tmp > maximum || ((tmp == maximum) && (((Math.random())*10+1)%2 == 0) )) {
 
                             maximum = tmp;
                             maxi = i;
                             maxj = j;
                       }
-                      game[i][j] = 0;
+                      game[i][j] = null;
                 }
           	}
      	}
@@ -34,67 +32,15 @@ var IAManager = {
      
      var div = document.getElementById(id);
      
-     drawCircle(div);
+     Game.drawCircle(div);
      
      Game.checkWinner();
 },
 	
-	/*--- Returns the maximum of children---*/
-	maximum : function mmaximum(game,depth) {
-	     if(depth == 0 || IAManager.gagnant(game)!=0) {
-
-	          return IAManager.evaluation(game);
-	     }
-	 
-	     var maxi = -10000;
-	     var tmp;
-	 
-	     for(var i=0;i<3;i++) {
-	          for(var j=0;j<3;j++) {
-	                if(game[i][j] == 0) {
-	                      game[i][j] = 1;
-	                      tmp = IAManager.minimum(game,depth-1);
-	                      
-	                      if(tmp > maxi|| ((tmp == maxi) && (((Math.random())*10+1)%2 == 0) )) {
-	                            maxi = tmp;
-	                      }
-	                      game[i][j] = 0;
-	                }
-	          }
-	     }
- 		return maxi;
-      
-	},
 	
-	/*--- Returns the minimum of children---*/
-	minimum : function mminimum(game,depth) {
-	     if(depth == 0 || IAManager.gagnant(game)!=0) {
-	          return IAManager.evaluation(game);
-	     }
-	 
-	    var mini = 10000;
-	    var tmp;
-	 
-	 	
-	     for(var i=0;i<3;i++) {
-	          for(var j=0;j<3;j++) {
-	                if(game[i][j] == 0) {
-	                      game[i][j] = 2;
-	                      tmp = IAManager.maximum(game,depth-1);
-							if(tmp < mini || ( (tmp == mini) && (((Math.random())*10+1)%2 == 0))) {
-	                            mini = tmp;
-	                     	}
-	                      game[i][j] = 0;
-	                }
-	          }
-     	 }
- 
-     return mini;
-      
-	},
 	
-/*--- Returns the 'score' of the lines, columns or diagonals---*/
-	calcScore : function mcalcScore(cntpion,cntjoueur) {
+    /*--- Returns the 'score' of the lines, columns or diagonals---*/
+	calcScore : function (cntpion,cntjoueur) {
 		switch(cntpion)
 		    {
 		    case 1:
@@ -109,7 +55,7 @@ var IAManager = {
 	},
 	
 /*--- Evaluation fonction for this max_min algorithm---*/
-	evaluation : function meval(game) {
+	evaluation : function (game) {
 	     var vainqueur;
 	     var nb_de_pions = 0;
 	     var score =0;
@@ -117,7 +63,7 @@ var IAManager = {
 	     //Count number pions
 		 for(var i=0;i<3;i++) {
 		          for(var j=0;j<3;j++) {
-		               if(game[i][j] != 0) {
+		               if(game[i][j] != null) {
 		                    nb_de_pions++;
 		               }
 		          }
@@ -131,14 +77,11 @@ var IAManager = {
 	         if( vainqueur == 2 )
 	          {
 	             return 1000 - nb_de_pions;
-	
-	
 	          }
 	          //Player wins
 	          else if( vainqueur == 1 )
 	          {
 	          	 return -1000 + nb_de_pions;
-	
 	          }
 	          //Egality
 	          else
@@ -235,9 +178,9 @@ var IAManager = {
 			
 		}
 		else {
-			for(i=0;i<3;i++) {
-	               for(j=0;j<3;j++) {
-	                    if(game[i][j] == 0) {
+			for(i = 0; i < 3  ;i++) {
+	               for(j = 0; j < 3; j++) {
+	                    if(game[i][j] == null) {
 	                         return 0;
 	                    }
 	               }
@@ -248,10 +191,12 @@ var IAManager = {
 	},
 
 /*--- Returns the line number with have 3 same symbols---*/
-	nb_series : function mnb_series(game) {
+	nb_series : function (game) {
 	 
 		 var compteur1;
 		 var compteur2;
+		 var i;
+		 var j;
 	      
 	     var series_j1 = 0;
 	     var series_j2 = 0;
@@ -260,7 +205,7 @@ var IAManager = {
 	     compteur2 = 0;
 	 
 	     //Diagonal
-	     for(var i=0;i<3;i++)
+	     for(i = 0; i < 3; i++)
 	     {
 	          if(game[i][i] == 1)
 	          {
@@ -288,7 +233,7 @@ var IAManager = {
 	     compteur2 = 0;
 	 
 	     //Diagonal
-	     for(var i=0;i<3;i++) {
+	     for(i = 0;i < 3; i++) {
 	          if(game[i][2-i] == 1) {
 	               compteur1++;
 	               compteur2 = 0;

@@ -2,64 +2,75 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0;height=device-height;">	
 
 		<title>Tic Tac Toe</title>
-				
+		<link rel="stylesheet" type="text/css" href="style/header.css">
+		<link rel="stylesheet" type="text/css" href="style/button.css">
+		<link rel="stylesheet" type="text/css" href="style/confirm.css">
 		<link href="style/tictactoe.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<script async type="text/javascript" src="js/draw.js"></script>
-		<script async type="text/javascript" src="js/game.js"></script>
-		<script async type="text/javascript" src="js/iA.js"></script>
-		<script async type="text/javascript" src="js/display.js"></script>
 
 	</head>
 <body>
-	
-	<header>
-		<h3>Tic Tac Toe</h3>
-	</header>
-	
-	<div id="playername">Nom Joueur</div>
-	<div id="firstplayer"><h5>premier joueur</h5></div>
 
-	<section id="menu">
-		<img src="style/images/accueil.jpg" alt="logo"/>
-		<button onclick="playwithTwo();"> Play VS Human</button>
-		<button onclick="playwithIA();"> Play VS AI</button>
+	<section class="skin-dark title" role="region">
+		<header>
+		<a id='headerback' href="#"><span class="icon icon-back">back</span></a>
+			<h1>Tic Tac Toe</h1>
+		</header>
 	</section>
-	
-	<section id="formulaire">
-		<form id="forme">
-			<label id=''> Firstname player 1</label>
-			<input type="text" id="firstname1" value=""/>
-			<label id=''> Firstname player 2</label>
-			<input type="text" id="firstname2" value=""/>
-			<input type="button" value="Validate" onclick='validate()'/></p>
-		</form>
-		<div id="error">Please enter a name for both players</div>
+	<section class="text">
+		<div id="playername">Nom Joueur</div>
+		<div id="firstplayer"><h5>premier joueur</h5></div>
 	</section>
-	
-	
-	<section id="play">
-		<section id="tictactoe">
-			<div class="line">
-				<div id='0-0' class="column1" onclick="Game.onClick(this)"></div>
-				<div id='0-1' class="column2" onclick="Game.onClick(this)"></div>
-				<div id='0-2' class="column3" onclick="Game.onClick(this)"></div>
-			</div>
-			<div class="line">
-				<div id='1-0' class="column1" onclick="Game.onClick(this)"></div>
-				<div id='1-1' class="column2" onclick="Game.onClick(this)"></div>
-				<div id='1-2' class="column3" onclick="Game.onClick(this)"></div>
-			</div>
-			<div class="line3">
-				<div id='2-0' class="column1" onclick="Game.onClick(this)"></div>
-				<div id='2-1' class="column2" onclick="Game.onClick(this)"></div>
-				<div id='2-2' class="column3" onclick="Game.onClick(this)"></div>
-			</div>
-		</section>
-		<input id="back" type="button" value="Back Menu" onclick='backMenu()'/></p>
+	<section id="container1">
+		<section class="container">
+		    <div id="menu">
+		    </div> 
+		    <div id="tictactoe">
+		    	<div class="line">
+					<div id='0-0' class="column1 column"><div></div></div>
+					<div id='0-1' class="column2 column"><div></div></div>
+					<div id='0-2' class="column3 column"><div></div></div>
+				</div>
+				<div class="line">
+					<div id='1-0' class="column1 column"><div></div></div>
+					<div id='1-1' class="column2 column"><div></div></div>
+					<div id='1-2' class="column3 column"><div></div></div>
+				</div>
+				<div class="line3">
+					<div id='2-0' class="column1 column"><div></div></div>
+					<div id='2-1' class="column2 column"><div></div></div>
+					<div id='2-2' class="column3 column"><div></div></div>
+				</div>
+		    </div>
+		    <div id="formulaire">
+		    <form>
+		    	<h2> Player 1</h2>
+		    	<input id='firstname1' type='text' required placeHolder='Username player 1'/>
+		    	<h2> Player 2</h2>
+		    	<input id='firstname2' type='text' required placeHolder='Username player 2'/>
+		    </form>
+		    </div>
+    	</section>	
+	</section>
+	<section class="bouton">
+	<div id="buttonmenu"> 
+		<a id="playTwo" class="recommend menubutton first" role="button" href="#">Play VS Human</a>
+		<a id="playIA" class="recommend menubutton" role="button" href="#"> Play VS AI</a>
+	</div>
+	<div id="buttonvalidate">
+		<a id="validate" class="recommend" role="button" href="#">Validate</a>
+	</div>
+	<div id="buttonother">
+		<a id="back" class="recommend backbutton" role="button" href="#">Menu</a>
+	</div>
 	</section>
 </body>
+<script sync type="text/javascript" src="js/popup.js"></script>
+
+		<script sync type="text/javascript" src="js/draw.js"></script>
+		<script async type="text/javascript" src="js/game.js"></script>
+		<script async type="text/javascript" src="js/iA.js"></script>
+		<script sync type="text/javascript" src="js/display.js"></script>
 </html>
+

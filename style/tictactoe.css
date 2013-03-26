@@ -1,35 +1,49 @@
 /************** CSS design for the tic tac toe *************/
 
 /*--- General design for the small device : phone---*/
-@viewport {
-    orientation: portrait;
-}
+
 html {
-	background:url(images/feuille.jpg);
-	background-size:100% 100%;
-	-moz-background-size:100% 100%; /* Old Firefox */
-	background-repeat:no-repeat;
-	height:100%;
+	font-size:62%;
+	overflow:hidden;	
 }
 body {
+	/*display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+	-webkit-flex-flow: column wrap;
+	-moz-flex-flow: column wrap;
+	flex-flow: column wrap;*/
+	padding: 0; 
 	margin : auto;
-	//height:410px;
 	
 }
-
-header {
-	color: red;	
-	font-size : 25px;
-	padding-top :3%;
-	text-align:center;	
-	margin-top :1%;
+.title {
+	height:5rem;	
+}
+.bouton {
+	bottom:0;
+	margin:auto;
+	height:auto;
+	/*flex:1;
+	-webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;*/
 }
 
+.bouton a.menubutton {
+	display:inline-block;
+	width:49.5%;	
+
+}
+.backbutton,#buttonvalidate {
+	width:100%;
+}
 
 #playername,#firstplayer {
 	text-align:center;	
-	margin-top:1%;	
+	visibility:hidden;	
 }
+
 h3,h4,h5 {
 	margin:0;
 }
@@ -39,69 +53,59 @@ h5 {
 	margin-bottom:1%;	
 }
 
-#tictactoe,#menu,#formulaire {
-	width :300px;
-	height : 300px;
+#container1 {
+	/*-moz-box-flex :1;
+	flex:1;*/
+	width:100%;
+	display:block;
+
+}
+.container {
+	width:auto;
+	height:auto;
 	margin:auto;
-	background-color: #EFEFEF;	
-    padding:0%
-    margin :0%;		
-}
-#playername,#firstplayer{
-	visibility:hidden;	
-}
-#play,#formulaire,#error{
-	display: none;	
 }
 
-/*--- Menu design ---*/
 #menu {
-	text-align: center;
+	width:100%;
+	height:100%;
+	background-image:url(images/accueil.jpg);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	margin-bottom:0;	
 }
 
-#menu img {
-	width:300px;
-	height:300px;
-	text-align : center;
-}
-
-/*--- Formulaire design ---*/
-#formulaire form {
+#formulaire {
+	display:none;
+	width:100%;
+	height:100%;
 	text-align:center;
-	padding-top :10%;
+	
+}
+input {
+	margin-bottom:5%;	
 }
 
-#formulaire form label {
-	margin:auto;
-	margin-top:5%;
-	display:block;
+#formulaire form {
+	width:100%;
+	height:100%;
+	margin-top:10%;
 }
 
-#formulaire form input {
-	margin:auto;
-	margin-top:5%;
-	display:block;
+#tictactoe {
+	display:none;
+	background-color: #EFEFEF;
+	width:100%;
+	height:100%;	
 }
 
-#error{
-	color : red;
-	text-align:center;	
-}
-
-
-/*--- Tic tac toe(plateau) design ---*/
-#play {
-	text-align:center;	
-}
 #tictactoe div {
 	padding:0;
-	margin:0;	
-}
-#back {
-	margin-top:0.5%;	
+	margin:0;
 }
 
 .line, .line3 {
+	display:block;
 	width:100%;
 	height :33.2%;
 	margin-bottom :0%;
@@ -121,29 +125,27 @@ h5 {
 	border-right:1px dashed black;
 }
 
-canvas{
-	width:100%;
-	height:100%;
-	margin :0px;	
-	padding :0%;
+
+.circle {
+	border-radius:50%;
+	border:2px solid blue;
+	bottom:0;
+	width :90%;
+	height:90%;
 }
 
-
-/*--- Specials specifications for the 'big' device ---*/
-@media all and (min-width: 500px) {
-
-	
-	#menu img,#menu {
-	width:450px;
-	height:450px;
-	margin:auto;	
+.cross {
+	width : 90%;
+	height :90%;
+	background-image:url(images/croix.png);
+    -moz-background-size: 100% 100%;           /* Gecko 1.9.2 (Firefox 3.6) */
+    -o-background-size: 100% 100%;           /* Opera 9.5 */
+    -webkit-background-size: 100% 100%;           /* Safari 3.0 */
+    background-size: 100% 100%;    
 }
-	#tictactoe,#menu,#formulaire {
-	width :450px;
-	height :450px;
-	background-color: #EFEFEF;	
-    padding:0%
-    margin :0%;
-	
+.bouton div {
+	margin-bottom:0;	
 }
-
+#buttonother,#buttonvalidate {
+	display:none;	
+}
