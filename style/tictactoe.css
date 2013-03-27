@@ -4,26 +4,30 @@
 
 html {
 	font-size:62%;
-	overflow:hidden;	
+	overflow:hidden;
 }
+
+.icon-back {
+	background-repeat:no-repeat;
+	background-size:auto;	
+}
+
 body {
-	/*display: -webkit-flex;
-    display: -moz-flex;
-    display: flex;
-	-webkit-flex-flow: column wrap;
-	-moz-flex-flow: column wrap;
-	flex-flow: column wrap;*/
 	padding: 0; 
 	margin : auto;
-	
+	position:relative;
 }
+
 .title {
 	height:5rem;	
 }
+
+
 .bouton {
-	bottom:0;
 	margin:auto;
 	height:auto;
+	min-width:100%;
+	position:relative;
 	/*flex:1;
 	-webkit-box-flex: 1;
     -moz-box-flex: 1;
@@ -32,20 +36,35 @@ body {
 
 .bouton a.menubutton {
 	display:inline-block;
-	width:49.5%;	
+	margin:auto;
+	padding:0;
+	max-width:49%;	
 
 }
+
 .backbutton,#buttonvalidate {
 	width:100%;
+}
+
+.second {
+	float:right;	
+}
+#winnerbox {
+	visibility:hidden;	
 }
 
 #playername,#firstplayer {
 	text-align:center;	
 	visibility:hidden;	
 }
+h2 {
+	margin-top:0;
+	padding-top:2%;	
+}
 
 h3,h4,h5 {
 	margin:0;
+	padding-bottom:2%;
 }
 
 h5 {
@@ -57,13 +76,12 @@ h5 {
 	/*-moz-box-flex :1;
 	flex:1;*/
 	width:100%;
+	min-height:100%;
 	display:block;
 
 }
 .container {
-	width:auto;
-	height:auto;
-	margin:auto;
+margin:auto;
 }
 
 #menu {

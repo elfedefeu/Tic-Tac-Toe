@@ -4,9 +4,8 @@
 
 /* Main dialog setup */
 form[role="dialog"][data-type="confirm"] {
-  background:
-    url(confirm/images/ui/pattern.png) repeat left top,
-    url(confirm/images/ui/gradient.png) no-repeat left top / 100% 100%;
+  background-image: url(confirm/images/ui/gradient.png) ;
+  background-size:100% 100%;
   overflow: hidden;
   position: absolute;
   z-index: 100;
@@ -38,12 +37,15 @@ form[role="dialog"][data-type="confirm"] > section {
   color: #FAFAFA;
   padding: 0 2.5rem 0 2rem;
   -moz-box-sizing: padding-box;
-  width: 100%;
+  //width: 100%;
   display: inline-block;
   overflow-y: scroll;
   max-height: 100%;
+  width:100%;
   vertical-align: middle;
   white-space: normal;
+  position:absolute;
+  top:40%;
 }
 
 form[role="dialog"][data-type="confirm"] h1 {
@@ -64,10 +66,11 @@ form[role="dialog"][data-type="confirm"] menu {
   background: #2d2d2d url(confirm/images/ui/pattern.png) repeat left top;
   display: block;
   overflow: hidden;
+  text-align:center;
+  width:100%;
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  bottom:0;
+
 }
 
 form[role="dialog"][data-type="confirm"] menu button::-moz-focus-inner {

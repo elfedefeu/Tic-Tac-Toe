@@ -44,6 +44,10 @@ var Game = {
 		Game.myListenerEvent('back',Game.backMenu);
 		Game.myListenerEvent('headerback',Game.backMenu);
 		Game.myListenerEvent('validate',Game.validate);
+		Game.myListenerEvent('ok',function() {
+			Game.propertyCSS('winnerbox','visibility','hidden');
+
+		});
 	},
 	
 	propertyCSS : function (element,property,valeur) {
@@ -97,8 +101,6 @@ var Game = {
     	Game.propertyCSS('menu','display','none');
 	    Game.propertyCSS('buttonmenu','display','none');
 	    Game.propertyCSS('buttonvalidate','display','block');
-
-	    //Game.propertyCSS('error','display','none');
 		Game.propertyCSS('formulaire','display','inline-block');
 	},
 
@@ -116,14 +118,17 @@ var Game = {
 		    Game.ia = false;
 	   		Game.reset();
 	   		
-	   		document.getElementById('playername').innerHTML = "<h2>"+ Game.player1 + " VS "+Game.player2 + "</h2>";
+	   		document.getElementById('playername').innerHTML = Game.player1 + " VS "+Game.player2 ;
 	        document.getElementById('firstplayer').innerHTML = Game.beginplayer + " begins !";
 
 	        Game.propertyCSS('formulaire','display','none');
-            Game.propertyCSS('playername','visibility','visible');
-    	    Game.propertyCSS('firstplayer','visibility','visible'); 
-	        Game.propertyCSS('tictactoe ','display','block');
-			
+	        Game.propertyCSS('buttonvalidate','display','none');
+	        Game.propertyCSS('buttonother','display','block');
+	        Game.propertyCSS('tictactoe','display','block');
+   	    	Game.propertyCSS('buttonother','display','block');
+    		Game.propertyCSS('playername','visibility','visible');
+    		Game.propertyCSS('firstplayer','visibility','visible');    
+            			
 		}
 	},
 
@@ -201,8 +206,9 @@ var Game = {
 	},
 	
 	displayWinner : function (nameplayer,currentplayer) {
-		//document.getElementById("winnermessage").innerHTML= nameplayer + " wins";
-		//Game.propertyCSS('popup','display','block');
+		console.log('titi');
+		document.getElementById("winnermessage").innerHTML= nameplayer + " wins";
+		Game.propertyCSS('winnerbox','visibility','visible');
 		Game.currentplayer = currentplayer;
 		Game.reset();	
 		
