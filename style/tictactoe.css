@@ -34,7 +34,7 @@ body {
     box-flex: 1;*/
 }
 
-.bouton a.menubutton {
+ .menubutton {
 	display:inline-block;
 	margin:auto;
 	padding:0;
@@ -62,7 +62,7 @@ h2 {
 	padding-top:2%;	
 }
 
-h3,h4,h5 {
+h3,h4{
 	margin:0;
 	padding-bottom:2%;
 }
@@ -126,7 +126,7 @@ input {
 	display:block;
 	width:100%;
 	height :33.2%;
-	margin-bottom :0%;
+	margin-bottom :0;
 }
 
 .line {
@@ -137,7 +137,7 @@ input {
 	display:inline-block;	
 	width:32%;	
 	height:100%;
-	margin:0px;	
+	margin:0;	
 }
 .column1,.column2{
 	border-right:1px dashed black;
