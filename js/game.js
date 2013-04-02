@@ -206,7 +206,6 @@ var Game = {
 	},
 	
 	displayWinner : function (nameplayer,currentplayer) {
-		console.log('titi');
 		document.getElementById("winnermessage").innerHTML= nameplayer + " wins";
 		Game.propertyCSS('winnerbox','visibility','visible');
 		Game.currentplayer = currentplayer;

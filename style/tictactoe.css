@@ -15,30 +15,34 @@ html {
 body {
 	padding: 0; 
 	margin : auto;
-	position:relative;
+	//position:relative;
 }
-
-.title {
-	height:5rem;	
+.text {
+	//position:absolute;
+	//top:0.3 rem;	
+} 
+#container1 {	
+	position:absolute;
+	top:0.3 rem;
+	display:block;
+	width:100%;
 }
-
-
 .bouton {
-	margin:auto;
-	height:auto;
-	min-width:100%;
-	position:relative;
-	/*flex:1;
-	-webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;*/
+	height:15 rem;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
 }
+.container {
+	position:relative;
+	margin:auto;
+}
+
 
  .menubutton {
-	display:inline-block;
-	margin:auto;
+	margin:0;
 	padding:0;
-	max-width:49%;	
 
 }
 
@@ -46,9 +50,6 @@ body {
 	width:100%;
 }
 
-.second {
-	float:right;	
-}
 #winnerbox {
 	visibility:hidden;	
 }
@@ -72,16 +73,8 @@ h5 {
 	margin-bottom:1%;	
 }
 
-#container1 {
-	/*-moz-box-flex :1;
-	flex:1;*/
-	width:100%;
-	min-height:100%;
-	display:block;
-
-}
 .container {
-margin:auto;
+	margin:auto;
 }
 
 #menu {
@@ -97,9 +90,9 @@ margin:auto;
 	display:none;
 	width:100%;
 	height:100%;
-	text-align:center;
-	
+	text-align:center;	
 }
+
 input {
 	margin-bottom:5%;	
 }

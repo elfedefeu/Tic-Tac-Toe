@@ -1,6 +1,6 @@
 {
   "name": "Tic Tac Toe",
-  "version":"1.1",
+  "version":"1.0",
   "description": "Simple game of tic tac toe",
   "launch_path": "/index.html",
   "icons": {
@@ -9,7 +9,7 @@
   },
   "developer": {
     "name": "Pauline Patron",
-    "url":"http://tictactoe-apps.paulinepatron.fr/"
+    "url":"http://tictactoe-apps.paulinepatron.fr"
   },
   "default_locale": "en",
   "orientation" :"portrait"

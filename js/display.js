@@ -8,7 +8,6 @@
 
 			document.getElementsByClassName('container')[0].style.height=taille+'px';
 			document.getElementsByClassName('container')[0].style.width=taille+'px'; 
-			document.getElementsByClassName('bouton')[0].style.width=taille+'px';              
       
        
 		}

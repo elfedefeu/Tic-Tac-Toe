@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1.0,width=device-width">
+		<meta name="viewport" content="initial-scale=1.0,width=device-width,height=device-height">
 		<title>Tic Tac Toe</title>
 		<link rel="stylesheet" type="text/css" href="style/header.css">
 		<link rel="stylesheet" type="text/css" href="style/button.css">
@@ -64,15 +64,16 @@
 			<a id="back" class="recommend backbutton" role="button" href="#">Menu</a>
 		</div>
 	</section>
-	<form id="winnerbox" role="dialog" data-type="confirm">
-	    <section>
-	    	<h1>Winner !</h1><!-- this heading is optional -->
-	    	<p id="winnermessage">Are you sure you want to delete this contact?</p>
-	    </section>
-	    <menu>
-	    	<button id="ok">OK</button>
-	    </menu>
-	  </form>
+	<form role="dialog" data-type="confirm" id="winnerbox">
+		  <section>
+		    	<h1>Winner !</h1><!-- this heading is optional -->
+		    	<p id="winnermessage">Are you sure you want to delete this contact?</p>
+		  </section>
+		  <menu>
+		    <button id="ok">OK</button>
+		  </menu>
+	</form>
+	
 
 </body>
 		<script type="text/javascript" src="js/game.js"></script>
